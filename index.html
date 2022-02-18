@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Codigo Javascript de una calculadora de peso en Marte y Jupiter"/>
+    <meta name="autor" content="@JafetBrito"/>
+    <robots>
+        <meta name="robots" content="index, follow">
+    </robots>
+    <title>Calculadora de Peso en Marte y Jupiter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-black bg-black text-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Jafet Brito</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.jafet.itsoftandhardware.com">Mi sitio web</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacto
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="https://www.linkedin.com/in/jafet-brito/">linkedin</a></li>
+                  <li><a class="dropdown-item" href="https://api.whatsapp.com/send?phone=527776027258&text=Me%20interesa%20conversar...">whatsapp</a></li> 
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="text-center">
+        <img src="./marte.png" class="img-fluid" alt="Fotografia de Marte desde un telescopio">
+    </div>
+    <div class="container">
+            <center>
+                <h1>Tu peso en otro Planeta!</h1>
+                <p>En la tierra pesas distinto que en Marte o Jupiter</p>
+            </center>
+    </div>
+    <script>
+
+        var usuario = prompt("¿Cuál es tu peso en kg?");
+        var planeta = prompt("Elige tu planeta. 1 es Marte, 2 es Jupiter");
+        var peso = parseInt(usuario);
+        var g_tierra = 9.8;
+        var g_marte = 3.8;
+        var g_jupiter = 24.8;
+        var peso_final;
+        var nombre;
+        if (planeta == 1)
+        {
+            peso_final = peso * g_marte / g_tierra;
+            nombre = "Marte";
+        }
+        else if (planeta == 2)
+        {
+            peso_final = peso * g_jupiter / g_tierra;
+            nombre = "Jupiter";
+        }
+        else
+        {
+            peso_final = "2800000000";
+            nombre = "kypton";
+        }
+        peso_final = parseInt(peso_final);
+        document.write("<center> tu peso en " + nombre + " es <strong> <center>" + peso_final + " kg<strong>");
+        
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
